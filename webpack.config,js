@@ -1,0 +1,20 @@
+​​var path = require('path');
+module.exports = {
+    modules: {
+        entry: './src/pages/index.js', // The same path as you use in the package.json
+        output: {
+            path: path.resolve(__dirname, 'dist'), // This must be absolute not relative
+            filename: 'bundle.js', // Bundle is a popular name as indicates files are bundled
+            publicPath: '/dist'
+        },
+        rules: [
+            {
+                test: /\.css$/, // How does JS know if this rule applies (Regex any .css)
+                    use: [ // Allows you to specify multiple loaders
+                        'style-loader', // Must be first (Webpack loads in reverse order)
+                        'css-loader'
+                    ]
+            }
+        ]
+    }
+};
