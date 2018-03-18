@@ -1,59 +1,40 @@
 import React, { Component } from 'react';
-import './Home.css';
-import { Parallax } from 'react-scroll-parallax';
+import classNames from 'classnames';
+import Flex from 'components/Flex/Flex';
+import Sidebar from 'components/Sidebar/Sidebar';
+import me from 'images/face.jpg'
+import styles from './Home.module.less';
 
+const IntroSection = () => {
+  return (
+    <Flex direction="column" alignItems="center" className={styles.introSection}>
+      <h1>GARETH LOWRIE</h1>
+      <hr />
+      <p className={styles.tagline}>Front-end Developer in Newcastle upon Tyne, UK</p>
+    </Flex>
+  )
+}
+
+const ContentSection = () => {
+  return (
+    <Flex direction="column" alignItems="center" className={styles.contentSection}>
+      <h2>PROFESSIONAL PROFILE</h2>
+      <p className={styles.tagline}>Front-end Developer in Newcastle upon Tyne, UK</p>
+    </Flex>
+  )
+}
 class Home extends Component {
   render() {
     return (
-      <div className="wrapper">
-        <div className="section section1">
-          <p>GARETH LOWRIE.</p>
-        </div>
-        <Parallax
-          className="custom-class"
-          offsetXMax={-20}
-          offsetXMin={0}
-          slowerScrollRate
-          tag="figure"
-          styleInner={{"backgroundColor": "grey"}}
-          styleOuter={{"backgroundColor": "black"}}
-        >
-          <div className="section section2">
-
-          </div>
-        </Parallax>
-
-        <Parallax
-          className="custom-class"
-          offsetXMax={20}
-          offsetXMin={0}
-          slowerScrollRate
-          tag="figure"
-          styleInner={{"backgroundColor": "pink"}}
-          styleOuter={{"backgroundColor": "black"}}
-        >
-          <div className="section section3">
-
-          </div>
-        </Parallax>
-
-        <Parallax
-          className="custom-class"
-          offsetXMax={-20}
-          offsetXMin={0}
-          slowerScrollRate
-          tag="figure"
-          styleInner={{"backgroundColor": "lightblue"}}
-          styleOuter={{"backgroundColor": "black"}}
-        >
-          <div className="section section4">
-
-          </div>
-        </Parallax>
-        <div className="section section5">
-          
-        </div>
-      </div>
+      <Flex className="wrapper">
+        <Sidebar basis="30%" grow={0} shrink={0} />
+        <Flex.Item basis="70%" grow={1} shrink={0} className={styles.bodyContainer}>
+          <Flex direction="column" justifyContent="flex-start" alignItems="center">
+            <IntroSection />
+            <ContentSection />
+          </Flex>
+        </Flex.Item>
+      </Flex>
     );
   }
 }
