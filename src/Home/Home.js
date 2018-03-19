@@ -26,8 +26,8 @@ const Home = ({
         <Sidebar basis="30%" grow={0} shrink={0} className={styles.sidebar} />}
 
       <Flex.Item basis="70%" grow={1} shrink={0} className={styles.bodyContainer}>
-        <Flex direction="column" justifyContent="flex-start" alignItems="center">
-          {Object.values(MAP).map((Component) => (<Component />))}
+        <Flex direction="column" alignItems="center">
+          {Object.values(MAP).map((Component, index) => (<Component key={index} />))}
           <Footer />
         </Flex>
       </Flex.Item>

@@ -1,10 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Job from 'components/Job/Job';
 import Flex from 'components/Flex/Flex';
 import Tags from 'components/Tags/Tags';
 import styles from './index.module.less';
+import compose from 'recompose/compose';
 import getContext from 'recompose/getContext';
-import PropTypes from 'prop-types';
+import branch from 'recompose/branch';
+import renderNothing from 'recompose/renderNothing';
+import renderComponent from 'recompose/renderComponent';
+import phone from 'icons/phone.svg';
+import email from 'icons/email.svg';
+
+const mobileBreakpoint860 = 860;
+const mobileBreakpoint1080 = 1080;
 
 export const EmploymentSection = ({ windowWidth }) => {
     return (
@@ -47,36 +56,40 @@ export const ProfessionalProfileSection = ({ windowWidth }) => {
       <div className={styles.contentSection}>
         <h2>PROFESSIONAL PROFILE</h2>
         <p className={styles.tagline}>Hey. I'm Gareth, an enthusiastic UX developer. I turn beautiful designs into stateful applications using HTML, CSS, JavaScript, ES6, React and more. I'm a high flying guy with academic excellence and a real passion for the latest technologies. Want to know more? Take a scroll!</p>
+        {windowWidth < mobileBreakpoint860 && 
+          <span><a href="http://garethlowrie.co.uk/cv.pdf" target="_blank" className={styles.mobileButton}>Download CV</a>
+          <a href="https://linkedin.com/in/garethlowrie" target="_blank" className={styles.mobileButton}>Linked In</a></span>}
       </div>
     )
 }
   
 export const SkillsSection = ({ windowWidth }) => {
+  const basis = windowWidth < mobileBreakpoint1080 ? '100%' : '50%';
     return (
       <div className={styles.contentSection}>
         <h2>EXPERTISE</h2>
-        <Flex className={styles.expertiseLabels}>
-          <Flex.Item basis="50%" grow={0}>
+        <Flex className={styles.expertiseLabels} wrap="wrap">
+          <Flex.Item basis={basis} grow={0}>
             <div>
               <p>JavaScript and Libraries</p>
               <Tags items={['ES6', 'React', 'Recompose', 'lodash', 'Formik']} />
             </div>
           </Flex.Item>
-          <Flex.Item basis="50%" grow={0}>
+          <Flex.Item basis={basis} grow={0}>
             <div>
               <p>Markup and Styling</p>
               <Tags items={['HTML5', 'CSS3', 'LESS', 'SVG', 'JSON', 'XML', 'Bootstap', 'FontAwesome']} />
             </div>
           </Flex.Item>
         </Flex>
-        <Flex className={styles.expertiseLabels}>
-          <Flex.Item basis="50%">
+        <Flex className={styles.expertiseLabels} wrap="wrap">
+          <Flex.Item basis={basis}>
             <div>
               <p>Development and Build Tools</p>
               <Tags items={['git', 'npm', 'Webpack', 'Gatsby']} />
             </div>
           </Flex.Item>
-          <Flex.Item basis="50%">
+          <Flex.Item basis={basis}>
             <div>
               <p>Development Methodologies</p>
               <Tags items={['Agile', 'SCRUM']} />
@@ -123,9 +136,29 @@ export const EducationSection = ({ windowWidth }) => {
     )
 }
 
+export const ContactSection = () => {
+  return (
+      <div className={styles.contentSection}>
+          <h2>CONTACT</h2>
+          <p>Like to get in touch? Feel free to drop me a line..</p>
+          <div className={styles.contactButtonContainer}>
+            <a href="mailto:gareth@garethlowrie.co.uk" className={styles.contactLink}><img src={email} className={styles.icon} /></a>
+            <a href="tel:+447815593011" className={styles.contactLink}><img src={phone} className={styles.icon} /></a>
+          </div>
+      </div>
+  )
+}
+
 export const MAP = {
   'HEADER': getContext({ 'windowWidth': PropTypes.number })(HeaderSection),
   'PRO': getContext({ 'windowWidth': PropTypes.number })(ProfessionalProfileSection),
   'SKILLS': getContext({ 'windowWidth': PropTypes.number })(SkillsSection),
   'EMPLOYMENT': getContext({ 'windowWidth': PropTypes.number })(EmploymentSection),
-}
+  'CONTACT': compose(
+      getContext({ 'windowWidth': PropTypes.number }),
+      branch(
+        ({ windowWidth }) => windowWidth < mobileBreakpoint860,
+        renderComponent(ContactSection)
+      )
+    )(renderNothing())
+};
