@@ -16,9 +16,13 @@ import html from 'icons/html.svg';
 import css from 'icons/css.svg';
 import git from 'icons/git.svg';
 
-const Sidebar = (props) => {
+const Sidebar = ({
+    className,
+    ...props
+}) => {
+    const sidebarStyles = classNames(styles.sidebar, className);
     return (
-        <Flex.Item className={styles.sidebar} {...props}>
+        <Flex.Item className={sidebarStyles} {...props}>
             <Flex direction="column">
                 <Flex.Item className={styles.imageContainer}>
                     <img src={me} className={styles.image} />
@@ -56,12 +60,12 @@ const Sidebar = (props) => {
 
                 <SidebarSection header="EXPERTISE"> 
                     <Flex justifyContent="space-around" wrap="no-wrap">
-                        <img src={html} title="HTML5" grow={0} shrink={0} className={styles.iconExpertise} />
-                        <img src={css} title="CSS3" grow={0} shrink={0} className={styles.iconExpertise} />
-                        <img src={less} title="LESS" grow={0} shrink={0} className={styles.iconExpertise} />
-                        <img src={js} title="JavaScript" grow={0} shrink={0} className={styles.iconExpertise} />
-                        <img src={react} title="React" grow={0} shrink={0} className={styles.iconExpertise} />
-                        <img src={git} title="git" grow={0} shrink={0} className={styles.iconExpertise} />
+                        <img src={html} title="HTML5" className={styles.iconExpertise} />
+                        <img src={css} title="CSS3" className={styles.iconExpertise} />
+                        <img src={less} title="LESS" className={styles.iconExpertise} />
+                        <img src={js} title="JavaScript" className={styles.iconExpertise} />
+                        <img src={react} title="React" className={styles.iconExpertise} />
+                        <img src={git} title="git" className={styles.iconExpertise} />
                     </Flex>
                 </SidebarSection>
             </Flex>

@@ -7,8 +7,8 @@ const Tags = ({
 }) => {
     return (
         <Flex wrap="wrap" className={styles.tagContainer}>
-        {items.map((item) => (
-            <span className={styles.tag}>{item}</span>
+        {items.map((item, index) => (
+            <span key={index} className={styles.tag}>{item}</span>
         ))}
         </Flex>
     )

@@ -3,8 +3,10 @@ import Job from 'components/Job/Job';
 import Flex from 'components/Flex/Flex';
 import Tags from 'components/Tags/Tags';
 import styles from './index.module.less';
+import getContext from 'recompose/getContext';
+import PropTypes from 'prop-types';
 
-export const EmploymentSection = () => {
+export const EmploymentSection = ({ windowWidth }) => {
     return (
         <div className={styles.contentSection}>
             <h2>EMPLOYMENT</h2>
@@ -30,7 +32,7 @@ export const EmploymentSection = () => {
     )
 }
 
-export const HeaderSection = () => {
+export const HeaderSection = ({ windowWidth }) => {
     return (
       <div className={styles.headerSection}>
         <h1>GARETH LOWRIE</h1>
@@ -40,8 +42,8 @@ export const HeaderSection = () => {
     )
 }
   
-export const ProfessionalProfileSection = () => {
-    return (
+export const ProfessionalProfileSection = ({ windowWidth }) => { 
+  return (
       <div className={styles.contentSection}>
         <h2>PROFESSIONAL PROFILE</h2>
         <p className={styles.tagline}>Hey. I'm Gareth, an enthusiastic UX developer. I turn beautiful designs into stateful applications using HTML, CSS, JavaScript, ES6, React and more. I'm a high flying guy with academic excellence and a real passion for the latest technologies. Want to know more? Take a scroll!</p>
@@ -49,7 +51,7 @@ export const ProfessionalProfileSection = () => {
     )
 }
   
-export const SkillsSection = () => {
+export const SkillsSection = ({ windowWidth }) => {
     return (
       <div className={styles.contentSection}>
         <h2>EXPERTISE</h2>
@@ -85,7 +87,7 @@ export const SkillsSection = () => {
     )
 }
   
-export const EducationSection = () => {
+export const EducationSection = ({ windowWidth }) => {
     return (
       <div className={styles.contentSection}>
         <h2>EDUCATION</h2>
@@ -119,4 +121,11 @@ export const EducationSection = () => {
         </Flex>
       </div>
     )
+}
+
+export const MAP = {
+  'HEADER': getContext({ 'windowWidth': PropTypes.number })(HeaderSection),
+  'PRO': getContext({ 'windowWidth': PropTypes.number })(ProfessionalProfileSection),
+  'SKILLS': getContext({ 'windowWidth': PropTypes.number })(SkillsSection),
+  'EMPLOYMENT': getContext({ 'windowWidth': PropTypes.number })(EmploymentSection),
 }
