@@ -39,7 +39,10 @@ export default compose(
   withState('windowWidth', 'setWindowWidth', 0),
   withHandlers({
     updateWidth: ({ setWindowWidth }) => () => {
-      setWindowWidth(window.innerWidth);
+      if(window) {
+        setWindowWidth(window.innerWidth);
+      }
+
     }
   }),
   lifecycle({
