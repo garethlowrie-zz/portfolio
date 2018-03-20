@@ -36,7 +36,7 @@ const Home = ({
 }
 
 export default compose(
-  withState('windowWidth', 'setWindowWidth', window.innerWidth),
+  withState('windowWidth', 'setWindowWidth', 0),
   withHandlers({
     updateWidth: ({ setWindowWidth }) => () => {
       setWindowWidth(window.innerWidth);
@@ -44,6 +44,7 @@ export default compose(
   }),
   lifecycle({
     componentDidMount() {
+      this.props.updateWidth(window.innerWidth);
       window.addEventListener("resize", this.props.updateWidth)
     },
     componentWillMount() {
