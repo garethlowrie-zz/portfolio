@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
 import withState from 'recompose/withState';
@@ -22,6 +23,13 @@ const Home = ({
   const Component = MAP['PRO'];
   return (
     <Flex className="wrapper">
+    <Helmet
+        title="Gareth Lowrie | Developer"
+        meta={[
+          { name: "description", content: "Hey. I'm Gareth, an enthusiastic UX developer. I turn beautiful designs into stateful applications using HTML, CSS, JavaScript, ES6, React and more. I'm a high flying guy with academic excellence and a real passion for the latest technologies." },
+          { name: "keywords", content: "web developer, react, javascript, newcastle, north east, UX, developer" },
+        ]}
+      />
       {windowWidth > mobileBreakpoint &&
         <Sidebar basis="30%" grow={0} shrink={0} className={styles.sidebar} />}
 
@@ -47,7 +55,6 @@ export default compose(
   }),
   lifecycle({
     componentDidMount() {
-      document.title = 'Gareth Lowrie | Developer'
       this.props.updateWidth(window.innerWidth);
       window.addEventListener("resize", this.props.updateWidth)
     },
