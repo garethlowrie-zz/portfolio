@@ -36,16 +36,20 @@ const Home = ({
 }
 
 export default compose(
-  withState('windowWidth', 'setWindowWidth', window.innerWidth),
+  withState('windowWidth', 'setWindowWidth', 0),
   withHandlers({
     updateWidth: ({ setWindowWidth }) => () => {
-      setWindowWidth(window.innerWidth);
+      if(typeof window !== 'undefined') {
+        setWindowWidth(window.innerWidth);
+      }
+
     }
   }),
   lifecycle({
     componentDidMount() {
-      window.addEventListener("resize", this.props.updateWidth);
       document.title = 'Gareth Lowrie | Developer'
+      this.props.updateWidth(window.innerWidth);
+      window.addEventListener("resize", this.props.updateWidth)
     },
     componentWillMount() {
       this.props.updateWidth();
