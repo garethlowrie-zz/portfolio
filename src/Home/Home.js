@@ -44,7 +44,8 @@ export default compose(
   }),
   lifecycle({
     componentDidMount() {
-      window.addEventListener("resize", this.props.updateWidth)
+      window.addEventListener("resize", this.props.updateWidth);
+      document.title = 'Gareth Lowrie | Developer'
     },
     componentWillMount() {
       this.props.updateWidth();
