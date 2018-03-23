@@ -24,7 +24,7 @@ const Home = ({
   return (
     <Flex className="wrapper">
     <Helmet
-        title="Gareth Lowrie | Developer"
+        title="Gareth Lowrie | Front-end Developer"
         meta={[
           { name: "description", content: "Hey. I'm Gareth, an enthusiastic UX developer. I turn beautiful designs into stateful applications using HTML, CSS, JavaScript, ES6, React and more. I'm a high flying guy with academic excellence and a real passion for the latest technologies." },
           { name: "keywords", content: "web developer, react, javascript, newcastle, north east, UX, developer" },
