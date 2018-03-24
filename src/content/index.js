@@ -142,7 +142,7 @@ export const ContactSection = () => {
           <h2>CONTACT</h2>
           <p>Like to get in touch? Feel free to drop me a line..</p>
           <div className={styles.contactButtonContainer}>
-            <a href="mailto:gareth@garethlowrie.co.uk" className={styles.contactLink}><img src={email} className={styles.icon} /></a>
+            <a href="mailto:gareth@lowrie.io" className={styles.contactLink}><img src={email} className={styles.icon} /></a>
             <a href="tel:+447815593011" className={styles.contactLink}><img src={phone} className={styles.icon} /></a>
           </div>
       </div>

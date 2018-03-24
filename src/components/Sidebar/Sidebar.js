@@ -46,7 +46,7 @@ const Sidebar = ({
                 <SidebarSection header="CONTACT" icon={phone}> 
                     <SidebarItem
                         icon={email}
-                        linkProps={{ 'href': 'mailto:gareth@garethlowrie.co.uk' }}
+                        linkProps={{ 'href': 'mailto:gareth@lowrie.io' }}
                         linkText="Send Me a Message"
                         label="Email me"
                     />
