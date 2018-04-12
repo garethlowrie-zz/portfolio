@@ -31,7 +31,7 @@ const Sidebar = ({
                 <SidebarSection header="ABOUT" icon={download}> 
                     <SidebarItem
                         icon={download}
-                        linkProps={{ 'href': 'http://garethlowrie.co.uk/cv.pdf', 'target': '_blank' }}
+                        linkProps={{ 'href': 'https://github.com/garethlowrie/portfolio/raw/master/src/assets/Gareth%20Lowrie%20Resume.pdf', 'target': '_blank' }}
                         linkText="Download My Resume"
                         label="PDF"
                     />
