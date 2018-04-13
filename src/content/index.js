@@ -22,8 +22,8 @@ export const EmploymentSection = ({ windowWidth }) => {
             <Job
                 company="Communicator"
                 role="Junior Developer"
-                startDate="March 2018"  
-                endDate="Present" 
+                startDate="March 2018"
+                endDate="Present"
                 tags={['Agile', 'SCRUM', 'HTML5', 'CSS3', 'JavaScript', 'React', 'git', 'Jira', 'Bitbucket']}
             >
                 <p>After training alongside the Product Development Team I secured a position as Front-end Developer and became part of a team of four who are responsible for maintain and developing the UX of the Communicator Suite.</p>
@@ -31,7 +31,7 @@ export const EmploymentSection = ({ windowWidth }) => {
             <Job
                 company="Communicator"
                 role="Product Operations Analyst"
-                startDate="January 2017"  
+                startDate="January 2017"
                 endDate="March 2018"
                 tags={['Customer Service', 'SQL', 'Jira Service Desk Administration', 'Bug Fixing', 'Confluence', 'User Guide Creation', 'Blog Creator', '5 Star Satisfaction Rating']}
             >
@@ -50,19 +50,19 @@ export const HeaderSection = ({ windowWidth }) => {
       </div>
     )
 }
-  
-export const ProfessionalProfileSection = ({ windowWidth }) => { 
+
+export const ProfessionalProfileSection = ({ windowWidth }) => {
   return (
       <div className={styles.contentSection}>
         <h2>PROFESSIONAL PROFILE</h2>
         <p className={styles.tagline}>Hey. I'm Gareth, an enthusiastic UX developer. I turn beautiful designs into stateful applications using HTML, CSS, JavaScript, ES6, React and more. I'm a high flying guy with academic excellence and a real passion for the latest technologies. Want to know more? Take a scroll!</p>
-        {windowWidth < mobileBreakpoint860 && 
-          <span><a href="http://garethlowrie.co.uk/cv.pdf" target="_blank" className={styles.mobileButton}>Download CV</a>
+        {windowWidth < mobileBreakpoint860 &&
+          <span><a href="https://github.com/garethlowrie/portfolio/raw/master/src/assets/Gareth%20Lowrie%20Resume.pdf" target="_blank" className={styles.mobileButton}>Download CV</a>
           <a href="https://linkedin.com/in/garethlowrie" target="_blank" className={styles.mobileButton}>Linked In</a></span>}
       </div>
     )
 }
-  
+
 export const SkillsSection = ({ windowWidth }) => {
   const basis = windowWidth < mobileBreakpoint1080 ? '100%' : '50%';
     return (
@@ -99,7 +99,7 @@ export const SkillsSection = ({ windowWidth }) => {
       </div>
     )
 }
-  
+
 export const EducationSection = ({ windowWidth }) => {
     return (
       <div className={styles.contentSection}>
