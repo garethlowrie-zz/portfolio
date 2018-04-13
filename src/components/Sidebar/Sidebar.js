@@ -28,7 +28,7 @@ const Sidebar = ({
                     <img src={me} className={styles.image} />
                 </Flex.Item>
 
-                <SidebarSection header="ABOUT" icon={download}> 
+                <SidebarSection header="ABOUT" icon={download}>
                     <SidebarItem
                         icon={download}
                         linkProps={{ 'href': 'https://github.com/garethlowrie/portfolio/raw/master/src/assets/Gareth%20Lowrie%20Resume.pdf', 'target': '_blank' }}
@@ -43,22 +43,22 @@ const Sidebar = ({
                     />
                 </SidebarSection>
 
-                <SidebarSection header="CONTACT" icon={phone}> 
+                <SidebarSection header="CONTACT" icon={phone}>
                     <SidebarItem
                         icon={email}
                         linkProps={{ 'href': 'mailto:gareth@lowrie.io' }}
-                        linkText="Send Me a Message"
+                        linkText="GARETH@LOWRIE.IO"
                         label="Email me"
                     />
                     <SidebarItem
                         icon={phone}
                         linkProps={{ 'href': 'tel:+447815593011' }}
-                        linkText="Prefer To Speak"
+                        linkText="07815593011"
                         label="Phone me"
                     />
                 </SidebarSection>
 
-                <SidebarSection header="EXPERTISE"> 
+                <SidebarSection header="EXPERTISE">
                     <Flex justifyContent="space-around" wrap="no-wrap">
                         <img src={html} title="HTML5" className={styles.iconExpertise} />
                         <img src={css} title="CSS3" className={styles.iconExpertise} />
