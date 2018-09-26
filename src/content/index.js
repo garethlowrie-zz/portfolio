@@ -21,12 +21,12 @@ export const EmploymentSection = ({ windowWidth }) => {
             <h2>EMPLOYMENT</h2>
             <Job
                 company="Communicator"
-                role="Junior Developer"
+                role="Front-end Developer"
                 startDate="March 2018"
                 endDate="Present"
                 tags={['Agile', 'SCRUM', 'HTML5', 'CSS3', 'JavaScript', 'React', 'git', 'Jira', 'Bitbucket']}
             >
-                <p>After training alongside the Product Development Team I secured a position as Front-end Developer and became part of a team of four who are responsible for maintain and developing the UX of the Communicator Suite.</p>
+                <p>After training alongside the Product Development Team I secured a position as Front-end Developer and became part of a team of four who are responsible for maintain and developing the next generation UI of the Communicator Suite.</p>
             </Job>
             <Job
                 company="Communicator"
