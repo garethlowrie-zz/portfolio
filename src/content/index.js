@@ -26,7 +26,7 @@ export const EmploymentSection = ({ windowWidth }) => {
                 endDate="Present"
                 tags={['Agile', 'SCRUM', 'HTML5', 'CSS3', 'JavaScript', 'React', 'git', 'Jira', 'Bitbucket']}
             >
-                <p>After training alongside the Product Development Team I secured a position as Front-end Developer and became part of a team of four who are responsible for maintain and developing the next generation UI of the Communicator Suite.</p>
+                <p>After training alongside the Product Development Team I secured a position as Front-end Developer and became part of a team of three who are responsible for maintain and developing the next generation UI of the Communicator Suite.</p>
             </Job>
             <Job
                 company="Communicator"
