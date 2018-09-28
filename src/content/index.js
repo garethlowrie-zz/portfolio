@@ -62,7 +62,7 @@ export const HeaderSection = ({ windowWidth }) => {
       <div className={styles.headerSection}>
         <h1>GARETH LOWRIE</h1>
         <hr />
-        <p className={styles.tagline}>Front-end Developer in Newcastle upon Tyne, UK</p>
+        <p className={styles.tagline}>UI / UX Developer in Newcastle upon Tyne, UK</p>
       </div>
     )
 }
