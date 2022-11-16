@@ -10,10 +10,10 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "css-loader": "^0.28.10",
-    "gatsby": "^1.9.223",
+    "gatsby": "^5.0.1",
     "gatsby-link": "^1.6.38",
     "gatsby-plugin-favicon": "^2.1.1",
-    "gatsby-plugin-less": "^1.1.7",
+    "gatsby-plugin-less": "^7.0.0",
     "gatsby-plugin-netlify-lambda": "^0.1.5",
     "gatsby-plugin-resolve-src": "^1.0.0",
     "netlify-lambda": "^0.4.0",
